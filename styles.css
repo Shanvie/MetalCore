@@ -1,0 +1,300 @@
+ /* CSS Variables for color palette */
+ :root {
+  --color-bg: #3F4D63;
+  --color-text-body: #f0eeec;
+  --color-text-headline: #F2AE4A;
+  --color-primary: #ffffff;
+  --radius: 0.75rem;
+  --shadow-light: #8FA4BD;
+  --shadow-medium: #3F4D63;
+}
+
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin:0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  font-size: 17px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover,
+button:hover {
+  opacity: 0.85;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Container for center and max width */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Header and Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  box-shadow: 0 2px 4px var(--shadow-light);
+  z-index: 1000;
+  backdrop-filter: saturate(180%) blur(10px);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-link {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-body);
+  position: relative;
+  padding-bottom: 6px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #eccca0;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-text-headline);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: var(--color-text-body);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+.hero .btn-primary {
+  background-color: #acbed4;
+  color:#1d2531 ;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero .btn-primary:hover,
+.hero .btn-primary:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px var(--shadow-medium);
+  outline: none;
+}
+
+/* Sections */
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+section + section {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Features Cards */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 2rem;
+}
+.feature-card {
+  background: #f9fafb;
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 6px var(--shadow-light);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+.feature-card:hover,
+.feature-card:focus-within {
+  box-shadow: 0 6px 15px var(--shadow-medium);
+}
+.feature-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  line-height: 1;
+  user-select: none;
+}
+.feature-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-headline);
+}
+.feature-desc {
+  font-size: 1rem;
+  color: var(--color-text-body);
+}
+
+/* About Section */
+.about-text {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+  color: var(--color-text-body);
+  line-height: 1.75;
+}
+
+/* Products Section */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2rem;
+}
+.product-card {
+  background: #f9fafb;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+.product-card:hover {
+  box-shadow: 0 6px 15px var(--shadow-medium);
+}
+.product-image {
+  height: 140px;
+  background: #d1d5db;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.product-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-headline);
+}
+.product-desc {
+  font-size: 1rem;
+  color: var(--color-text-body);
+  flex-grow: 1;
+}
+
+/* Contact Section */
+form {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+label {
+  font-weight: 600;
+  color: var(--color-text-headline);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  color: var(--color-text-headline);
+  transition: border-color 0.25s ease;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+textarea {
+  min-height: 120px;
+}
+button[type="submit"] {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.125rem;
+  box-shadow: 0 4px 8px var(--shadow-medium);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px var(--shadow-medium);
+  outline: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-body);
+  user-select: none;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}

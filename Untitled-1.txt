@@ -1,0 +1,10 @@
+f:\AKSHITA\Metalcore\
+├── index.html
+├── styles.css
+├── script.js
+└── images/
+    ├── hero-bg.jpg
+    ├── steel-bars.jpg
+    ├── steel-pipes.jpg
+    └── steel-sheets.jpg
+    
